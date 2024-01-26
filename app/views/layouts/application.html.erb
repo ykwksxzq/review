@@ -36,7 +36,7 @@
          <%= link_to "マイページ", class: 'nav-link' %>
        </li>
        <li class="nav-item">
-         <%= link_to "投稿一覧", class: 'nav-link' %></li>
+         <%= link_to "投稿一覧", posts_path, class: 'nav-link' %></li>
        <li class="nav-item">
          <%= link_to "レビュー一覧",class: 'nav-link' %></li>
        <li class="nav-item">
@@ -53,9 +53,9 @@
        <li class="nav-item">
          <%= link_to "コメント一覧",class: 'nav-link' %></li>
        <li class="nav-item">
-         <%= link_to "ショップ管理", class: 'nav-link' %></li>
+         <%= link_to "ショップ管理", admin_shops_path, class: 'nav-link' %></li>
        <li class="nav-item">
-         <%= link_to "ジャンル管理", class: 'nav-link' %></li>
+         <%= link_to "ジャンル管理", admin_genres_path, class: 'nav-link' %></li>
        <li class="nav-item">
          <%= button_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'nav-link' %>
        </li>
@@ -80,6 +80,9 @@
     <main>
       <%= yield %>
     </main>
-    <footer class="bg-secondary text-white pt-5 pb-4"></footer>
+    <footer class="container-fluid mt-5 bg-secondary text-white pt-5 pb-4">
+     <div class="row">
+     </div>
+    </footer>
   </body>
 </html>

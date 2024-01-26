@@ -28,10 +28,14 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
 
 namespace :admin do
   get 'top' => 'homes#top', as: ''
+  resources :genres, only: [:index, :create, :edit, :update, :destroy]
+  resources :shops, only: [:index, :create, :edit, :update, :destroy]
 end
 
 scope module: :public do
   root to: "homes#top"
+
+  resources :posts, only: [:new, :index, :show, :create, :edit, :update, :destroy]
 end
 
 end
