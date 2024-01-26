@@ -3,20 +3,8 @@
   <div class="col-md-5 col-sm-10">
    <h5 class="text-dark p-4 mb-0">編集画面</h5>
 
-    <%= form_with model: @shop, url:admin_shop_path(@shop.id), method: :patch do |f| %>
+   <%= render partial: 'admin/edit', locals: { hoge: @shop, custom_url:admin_shop_path(@shop.id) } %>
 
-    <div class="form-group row">
-     <div class="field">
-      <h6 class="text-dark p-2 mb-0">ショップ名</h6>
-       <%= f.text_field :name, class: 'form-control'%>
-     </div>
-    </div>
-   <div class="actions m-3">
-    <%= f.submit '保存', class: "btn btn-success" %>
-   </div>
-
-   <% end %>
-  <br>
   <p><%= link_to "ショップ一覧に戻る", admin_shops_path, class: "underline" %></p>
   </div>
  </div>
