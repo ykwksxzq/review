@@ -20,7 +20,7 @@
 
      <div class="col-md-2 align-self-center">
      <% if user_signed_in? %>
-     <p class="text-primary">ようこそ、<%= current_user.nick_name %>さん！</p>
+     <p class="text-primary">ようこそ、<%= current_user.name %>さん！</p>
      <% end %>
      </div>
 
@@ -36,11 +36,11 @@
          <%= link_to "マイページ", class: 'nav-link' %>
        </li>
        <li class="nav-item">
-         <%= link_to "作品一覧", class: 'nav-link' %></li>
+         <%= link_to "商品一覧", class: 'nav-link' %></li>
        <li class="nav-item">
          <%= link_to "アイテム一覧",class: 'nav-link' %></li>
        <li class="nav-item">
-         <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link' %>
+         <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link' %>
        </li>
 
      <% elsif admin_signed_in? %>
