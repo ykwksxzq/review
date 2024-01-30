@@ -1,0 +1,8 @@
+<h4>新規投稿</h4>
+
+<%= form_with model: @post, url: posts_path, method: :post do |f| %>
+
+<h5>投稿画像</h5>
+<%= f.file_field :image, accept: "image/*" %>
+
+<h5>タイトル</h5>

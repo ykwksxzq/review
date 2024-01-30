@@ -35,6 +35,8 @@ end
 scope module: :public do
   root to: "homes#top"
 
+  get 'users/mypage' => 'users#show', as: 'mypage'
+
   resources :posts, only: [:new, :index, :show, :create, :edit, :update, :destroy]
 end
 
