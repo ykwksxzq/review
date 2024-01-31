@@ -37,6 +37,7 @@ scope module: :public do
 
   get 'users/mypage' => 'users#show', as: 'mypage'
 
+  resources :users, only: [:index, :create, :edit, :update, :destroy]
   resources :posts, only: [:new, :index, :show, :create, :edit, :update, :destroy]
 end
 
