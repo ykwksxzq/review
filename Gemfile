@@ -77,3 +77,10 @@ gem 'jquery-rails'
 gem 'devise'
 
 gem 'image_processing', '~> 1.2'
+
+
+gem "importmap-rails" #ESMとimportmapを使用して、トランスパイルやバンドルなしでRailsのモダンなJavaScriptを管理
+
+gem "turbo-rails" #JavaScriptを一切記述することなく、シングルページのWebアプリケーションのようなスピードを実現
+
+gem "stimulus-rails" #あなたがすでに持っているHTMLのための控えめなJavaScriptフレームワーク
