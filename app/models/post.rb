@@ -10,7 +10,15 @@ class Post < ApplicationRecord
 
   has_many :post_tags,dependent: :destroy
   has_many :tags,through: :post_tags
-
+  
+  
+  def get_image(width,height)
+   unless image.attached?
+     file_path = Rails.root.join('app/assets/images/no_image.jpg')
+     image.attach(io: File.open(file_path), filename: 'no_image.jpg', content_type: 'image/jpeg')
+   end
+     image.variant(resize_to_limit: [width, height]).processed
+  end
 
   def save_tag(sent_tags)
   # タグが存在していれば、タグの名前を配列として全て取得
@@ -31,6 +39,5 @@ class Post < ApplicationRecord
       self.tags << new_post_tag
     end
   end
-
 
 end

@@ -17,6 +17,9 @@ def create
   end
 end
 
+def index
+  @posts = Post.all
+end
 
 
 
