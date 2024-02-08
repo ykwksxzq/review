@@ -1,0 +1,14 @@
+投稿詳細
+
+<div>
+<%= image_tag @post.get_image(400, 400) %>
+
+<%= link_to mypage_path(@post.user.id) do %>
+<%= image_tag @post.user.get_profile_image(300,300) %>
+<% end %>
+
+<%= @post.user.name %>
+<%= @post.title %>
+<%= @post.content %>
+<%= @post.price %>
+<%= @post.rating %>
