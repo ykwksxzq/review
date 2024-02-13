@@ -39,7 +39,10 @@ scope module: :public do
   get 'users/unsubscribe' => 'users#unsubscribe', as: 'confirm_unsubscribe'
 
   resources :users, only: [:index, :create, :edit, :update, :destroy]
-  resources :posts, only: [:new, :index, :show, :create, :edit, :update, :destroy]
+  
+  resources :posts, only: [:new, :index, :show, :create, :edit, :update, :destroy] do
+    resources :post_comments, only: [:create, :destroy]
+  end
+ end
 end
 
-end

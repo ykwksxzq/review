@@ -15,6 +15,23 @@
 
 </div>
 
+<div>
+  <p>コメント件数：<%= @post.post_comments.count %></p>
+  <% @post.post_comments.each do |post_comment| %>
+    <p><%= image_tag post_comment.user.get_profile_image(100,100) %></p>
+    <%= post_comment.user.name %>
+    <%= post_comment.created_at.strftime('%Y/%m/%d') %><%= post_comment.content %>
+  <% end %>
+</div>
+<div>
+  <%= form_with model: [@post, @post_comment] do |f| %>
+    <%= f.text_area :content, placeholder: "コメントをここに" %>
+    <%= f.submit "送信する" %>
+  <% end %>
+</div>
+
+
+
 <%= link_to '編集', edit_post_path %>
 <%= button_to '削除', post_path(@post.id), method: :delete, data: { turbo_confirm: "本当に削除してよろしいですか？"} %>
 
