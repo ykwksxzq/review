@@ -6,6 +6,10 @@
 
 <div>
 
+<% @tag_list.each do |list|%>
+<%= list.name %>
+<%= "(#{list.posts.count})" %><% end %>
+
 <% @posts.each do |post| %>
 
 <%= link_to post_path(post.id) do %>
@@ -14,8 +18,8 @@
 
 <%= post.title %>
 <%= post.rating %>
-<%= post.tags.name %>
 <%= link_to "#{post.post_comments.count} コメント", post_path(post.id) %>
+
 
 <% end %>
 

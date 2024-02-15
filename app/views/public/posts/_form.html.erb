@@ -21,6 +21,8 @@
     <%= f.label :rating, "評価" %>
     <%= f.select :rating, (1..5).to_a %>
   </div>
+
   <div class="field">
-    <%= f.text_field :tag, placeholder: "タグを複数つけるには' , 'で区切ってください" %>
+    <%= f.label"タグ (,で区切ると複数タグ登録できます)" %>
+    <%= f.text_field :name,value: @tag_list,class:"form-control"%>
   </div>
