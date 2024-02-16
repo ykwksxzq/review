@@ -51,6 +51,13 @@ def destroy
   redirect_to posts_path
 end
 
+def search_tag
+  @tag_list=Tag.all
+  @tag=Tag.find(params[:tag_id])
+  @posts=@tag.posts
+end
+
+
 
 private
 
