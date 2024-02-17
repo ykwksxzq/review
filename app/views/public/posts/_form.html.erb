@@ -26,3 +26,8 @@
     <%= f.label"タグ (,で区切ると複数タグ登録できます)" %>
     <%= f.text_field :name,value: @tag_list,class:"form-control"%>
   </div>
+
+  <div class="field">
+  <%= f.label :status, "投稿状況" %>
+  <%= f.select :status, Post.statuses.keys.map { |k| [t("enums.post.status.#{k}"),k]}, {}, {class: "custom-select w-25"} %>
+  </div>

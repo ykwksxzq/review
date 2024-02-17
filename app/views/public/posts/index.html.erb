@@ -6,9 +6,11 @@
 
 <div>
 
+
+
 <% @tag_list.each do |list|%>
 <%= link_to list.name, search_tag_path(tag_id: list.id) %>
-<%= "(#{list.posts.count})" %><% end %>
+<%= "(#{list.posts.published.count})" %><% end %>
 
 <%= render 'index', posts: @posts %>
 

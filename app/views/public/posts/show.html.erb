@@ -43,7 +43,9 @@
 </div>
 
 
+<% if post_user == current_user %>
 
 <%= link_to '編集', edit_post_path %>
 <%= button_to '削除', post_path(@post.id), method: :delete, data: { turbo_confirm: "本当に削除してよろしいですか？"} %>
 
+<% end %>
