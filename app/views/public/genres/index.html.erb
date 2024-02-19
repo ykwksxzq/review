@@ -1,0 +1,10 @@
+<h5><%= @genre.name%>の投稿一覧</h5>
+
+ジャンル一覧
+<% @genres.each do |genre| %>
+<%= link_to genre.name, genres_path(genre_id: genre.id), method: :get %>
+<% end %>
+
+
+<%= render 'public/posts/index', posts: @posts %>
+

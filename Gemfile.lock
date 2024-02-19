@@ -194,6 +194,7 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.1.0)
+    ratyrate (1.2.2.alpha)
     rdoc (6.6.2)
       psych (>= 4.0.0)
     regexp_parser (2.9.0)
@@ -270,6 +271,7 @@ DEPENDENCIES
   jquery-rails
   puma (~> 5.0)
   rails (~> 7.0.8)
+  ratyrate
   sassc-rails
   selenium-webdriver
   sprockets-rails

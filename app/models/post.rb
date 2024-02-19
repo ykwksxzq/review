@@ -11,7 +11,7 @@ class Post < ApplicationRecord
   has_many :post_tags,dependent: :destroy
   has_many :tags,through: :post_tags
 
- enum status: { published: 0, draft: 1 }
+  enum status: { published: 0, draft: 1 }
   #0:公開中　1:下書き
 
   def get_image(width,height)

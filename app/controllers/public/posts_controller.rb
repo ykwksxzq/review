@@ -6,6 +6,7 @@ end
 
 def create
   @post = Post.new(post_params)
+  @post.rating = 0  # または適切なデフォルト値を設定
   @post.user_id = current_user.id
   tag_list = params[:post][:name].split(',')
   # 投稿ボタンを押下した場合
@@ -29,6 +30,7 @@ end
 def index
   @posts = Post.where(status: :published)
   @tag_list = Tag.joins(:posts).where(posts: { status: 'published' }).uniq
+  @genres = Genre.all
 end
 
 def show

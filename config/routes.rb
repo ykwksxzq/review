@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post '/rate' => 'rater#create', :as => 'rate'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -41,9 +42,11 @@ scope module: :public do
   get "search_tag"=>"posts#search_tag"
 
   resources :users, only: [:index, :create, :edit, :update, :destroy]
+  resources :genres, only: [:index]
 
   resources :posts, only: [:new, :index, :show, :create, :edit, :update, :destroy] do
     resources :post_comments, only: [:create, :destroy]
+    resources :reviews, only: [:create]
   end
  end
 end
